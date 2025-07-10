@@ -1960,6 +1960,8 @@ btn("EvilDoll", function()
 	local velbycfrvec=t.velbycfrvec
 	local addmode=t.addmode
 	local getJoint=t.getJoint
+        local getPartFromMesh=t.getPartFromMesh
+        local getPartJoint=t.getParJoint
     local getPartFromMesh=t.getPartFromMesh
     local getPartJoint=t.getPartJoint
 	local velYchg=t.velYchg
@@ -1970,6 +1972,9 @@ btn("EvilDoll", function()
 	local RightHip=getJoint("Right Hip")
 	local LeftHip=getJoint("Left Hip")
 	local Neck=getJoint("Neck")
+        local movingguadania = getPartFromMesh(131153746309427,17755388686)                  
+        local GuadaniaWeld = getPartJoint(movingguadania)
+
 
 
 	addmode("default", {
@@ -1979,7 +1984,8 @@ btn("EvilDoll", function()
 			local Ychg=velYchg()/20
 
 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.7278759594743862+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-1.7453292519943295+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.7278759594743862+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-1.7453292519943295+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime)
+GuadaniaWeld.C0=Lerp(GuadaniaWeld.C0,cfMul(cf(-3.2+0.1*sin(sine*3),-0.3,-0.9),angles(1.7453292519943295,-15.184364492350667,1.7453292519943295)),deltaTime) 
 
 end,
 		walk = function()
@@ -1990,19 +1996,22 @@ end,
 			local Ychg=velYchg()/20
 
 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-2.443460952792061+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-2.443460952792061+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime)
+GuadaniaWeld.C0=Lerp(GuadaniaWeld.C0,cfMul(cf(-3.2+0.1*sin(sine*3),-0.3,-0.9),angles(1.7453292519943295,-15.184364492350667,1.7453292519943295)),deltaTime) 
 end,
 		jump = function()
 			velYchg()
 			local Vfw, Vrt = velbycfrvec()
 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-1.3962634015954636+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.08726646259971647+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-1.3962634015954636+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.08726646259971647+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime)
+GuadaniaWeld.C0=Lerp(GuadaniaWeld.C0,cfMul(cf(-3.2+0.1*sin(sine*3),-0.3,-0.9),angles(1.7453292519943295,-15.184364492350667,1.7453292519943295)),deltaTime) 
 end,
 		fall = function()
 			velYchg()
 			local Vfw, Vrt = velbycfrvec()
 
-RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-3.141592653589793+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime) 
+RightHip.C0=Lerp(RightHip.C0,cfMul(cf(1,-1,0),angles(0,1.5707963267948966,0)),deltaTime)  RightShoulder.C0=Lerp(RightShoulder.C0,cfMul(cf(1,0.5,0),angles(1.6580627893946132+0.06981317007977318*sin(sine*5),1.5707963267948966,0)),deltaTime)  Neck.C0=Lerp(Neck.C0,cfMul(cf(0,1,-0.3),angles(-1.2217304763960306+0.06981317007977318*sin(sine*4),0,3.141592653589793)),deltaTime)  LeftHip.C0=Lerp(LeftHip.C0,cfMul(cf(-1,-1,0),angles(0,-1.5707963267948966,0)),deltaTime)  RootJoint.C0=Lerp(RootJoint.C0,cfMul(cf(0.5+0.2*sin(sine*3),2.3+0.5*sin((sine+3)*5),0.5+0.2*sin(sine*3)),angles(-3.141592653589793+0.06981317007977318*sin(sine*6),0,3.141592653589793)),deltaTime)  LeftShoulder.C0=Lerp(LeftShoulder.C0,cfMul(cf(-1,0.5,0),angles(-0.2617993877991494+0.05235987755982989*sin(sine*5),-1.4835298641951802+0.08726646259971647*sin(sine*5),0)),deltaTime)
+GuadaniaWeld.C0=Lerp(GuadaniaWeld.C0,cfMul(cf(-3.2+0.1*sin(sine*3),-0.3,-0.9),angles(1.7453292519943295,-15.184364492350667,1.7453292519943295)),deltaTime) 
 end
 	})
 
